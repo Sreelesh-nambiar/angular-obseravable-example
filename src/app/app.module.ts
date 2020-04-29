@@ -6,12 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 //import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
- import {ProductListComponent} from  './products/product-list.component'
- import {ConvertToSpacesPipe} from './shared/convert-to-spaces.pipe'
+ import {ProductListComponent} from  './products/product-list.component';
+ import {ConvertToSpacesPipe} from './shared/convert-to-spaces.pipe';
  //import {StarComponent} from './shared/star.component';
 // import { ProductDetailComponent } from './products/product-detail.component'
- import {WelcomeComponent} from './home/welcome.component'
- import {RouterModule} from '@angular/router'
+ import {WelcomeComponent} from './home/welcome.component';
+ import {RouterModule} from '@angular/router';
 // import { ProductDetailGuard } from './products/product-detail.guard';
 
 @NgModule({
