@@ -7,10 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 //import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
  import {ProductListComponent} from  './products/product-list.component'
- //import {ConvertToSpacesPipe} from './shared/convert-to-spaces.pipe'
+ import {ConvertToSpacesPipe} from './shared/convert-to-spaces.pipe'
  //import {StarComponent} from './shared/star.component';
 // import { ProductDetailComponent } from './products/product-detail.component'
-// import {WelcomeComponent} from './home/welcome.component'
+ import {WelcomeComponent} from './home/welcome.component'
  import {RouterModule} from '@angular/router'
 // import { ProductDetailGuard } from './products/product-detail.guard';
 
@@ -18,10 +18,10 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
      ProductListComponent,
-    // ConvertToSpacesPipe,
+     ConvertToSpacesPipe,
     // StarComponent,
     // ProductDetailComponent,
-    // WelcomeComponent
+     WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
-      //{ path: 'welcome', component: WelcomeComponent },
+      { path: 'welcome', component: WelcomeComponent },
       { path: 'products',component: ProductListComponent },
       // { path: 'products/:id',
       // canActivate:[ProductDetailGuard],
