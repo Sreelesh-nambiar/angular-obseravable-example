@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 
 import { IProduct } from './product';
+
+
+const httpOptions: any = {
+  headers: null
+};
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +17,26 @@ export class ProductService {
   // If using Stackblitz, replace the url with this line
   // because Stackblitz can't find the api folder.
   // private productUrl = 'assets/products/products.json';
-  private productUrl = '/src/products.json';
+  private productUrl = 'https://firebasestorage.googleapis.com/v0/b/firest-8affa.appspot.com/o/products.json?alt=media&token=4729b326-9e3f-410e-a5f5-806c5f330463';
 
   constructor(private http: HttpClient) { }
+ private addHeaders(): HttpHeaders {
+        let headers: HttpHeaders = new HttpHeaders();
+
+         headers = headers.append("Access-Control-Allow-Origin", '*');
+        return headers;
+    }
 
   getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(this.productUrl)
+     httpOptions.headers = this.addHeaders();
+
+  return this.http.get<IProduct[]>(this.productUrl,{headers :this.addHeaders()})
       .pipe(
         tap(data => console.log('All: ' + JSON.stringify(data))),
         catchError(this.handleError)
       );
+
+     // return observableObj;
   }
 
   getProduct(id: number): Observable<IProduct | undefined> {
