@@ -17,7 +17,7 @@ export class ProductService {
   // If using Stackblitz, replace the url with this line
   // because Stackblitz can't find the api folder.
   // private productUrl = 'assets/products/products.json';
-  // private productUrl = 'https://firebasestorage.googleapis.com/v0/b/firest-8affa.appspot.com/o/products.json?alt=media&token=4729b326-9e3f-410e-a5f5-806c5f330463';
+  /private productUrl = 'https://firebasestorage.googleapis.com/v0/b/firest-8affa.appspot.com/o/products.json?alt=media&token=4729b326-9e3f-410e-a5f5-806c5f330463';
   private productUrl = 'assets/products.json';
 
   constructor(private http: HttpClient) { }
@@ -25,7 +25,9 @@ export class ProductService {
         let headers: HttpHeaders = new HttpHeaders();
 
          headers = headers.append("Access-Control-Allow-Origin", '*');
-         headers = headers.append("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        //  headers = headers.append("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+         headers = headers.append("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization");
+          headers = headers.append("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
         return headers;
     }
 

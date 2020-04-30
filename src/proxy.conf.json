@@ -1,7 +1,10 @@
 {  
    "/api/*": {  
       "target": "https://firebasestorage.googleapis.com/v0/b/firest-8affa.appspot.com/o/products.json?alt=media&token=4729b326-9e3f-410e-a5f5-806c5f330463",  
-      "secure": false,  
-      "logLevel": "debug"  
+      "secure": false, 
+       "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
    }  
 }
